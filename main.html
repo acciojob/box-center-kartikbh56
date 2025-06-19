@@ -1,38 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Center Box</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Box</title>
     <style>
         body {
             margin: 0;
-            height: 100vh;
-            position: relative;
+            height: 100vh; /* Make body take full viewport height */
+            display: flex; /* Use flexbox for basic centering capabilities */
+            justify-content: center; /* Center horizontally using flexbox */
+            align-items: center; /* Center vertically using flexbox */
+            background-color: #f0f0f0; /* Light background for the page */
         }
 
         .center-box {
             width: 200px;
             height: 200px;
-            background-color: lightblue;
-            border: 2px solid black;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            
+            background-color: lightblue; /* Light blue background */
+            border: 2px solid black; /* 2px solid black border */
+
+            /* Positioning for the box itself */
+            position: absolute; /* Absolute positioning relative to the body (or nearest positioned ancestor) */
+            top: 50%; /* Move top edge to 50% from the top */
+            left: 50%; /* Move left edge to 50% from the left */
+            transform: translate(-50%, -50%); /* Adjust by half of its own width/height to truly center */
+
+            /* Flexbox for centering content inside the box */
             display: flex;
-            align-items: center;
-            justify-content: center;
+            justify-content: center; /* Center text horizontally */
+            align-items: center; /* Center text vertically */
+
+            /* Optional: for better aesthetics */
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .center-box p {
-            color: purple;
+            color: purple; /* Purple text color */
+            font-size: 1.2em;
             font-weight: bold;
+            margin: 0; /* Remove default paragraph margin */
         }
     </style>
 </head>
 <body>
+
     <div class="center-box">
         <p>This is center.</p>
     </div>
+
 </body>
 </html>
